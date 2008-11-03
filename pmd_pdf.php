@@ -2,7 +2,7 @@
 /* vim: set expandtab sw=4 ts=4 sts=4: */
 /**
  *
- * @version $Id: pmd_pdf.php 10416 2007-05-30 16:55:18Z lem9 $
+ * @version $Id: pmd_pdf.php 11683 2008-10-30 12:47:24Z lem9 $
  * @package phpMyAdmin-Designer
  */
 
@@ -60,7 +60,8 @@ if (isset($scale)) {
 <body>
 <br>
 <div style="text-align:center; font-weight:bold;">
-  <form name="form1" method="post" action="pmd_pdf.php?server=<?php echo $server; ?>&db=<?php echo $db; ?>&token=<?php echo $token; ?>">
+  <form name="form1" method="post" action="pmd_pdf.php">
+<?php echo PMA_generate_common_hidden_inputs($db); ?>
     <p><?php echo $strExportImportToScale; ?>:
       <select name="scale">
         <option value="1">1:1</option>
