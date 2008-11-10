@@ -3,7 +3,7 @@
 /**
  * tests for PMA_generate_common_url()
  *
- * @version $Id: PMA_get_real_size_test.php 10146 2007-03-20 14:16:18Z cybot_tm $
+ * @version $Id: PMA_generateCommonUrl_test.php 11813 2008-11-07 17:35:40Z lem9 $
  * @package phpMyAdmin-test
  */
 

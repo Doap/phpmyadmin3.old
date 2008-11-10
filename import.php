@@ -4,7 +4,7 @@
  * Core script for import, this is just the glue around all other stuff
  *
  * @uses    PMA_Bookmark_getList()
- * @version $Id: import.php 11643 2008-10-09 11:45:58Z lem9 $
+ * @version $Id: import.php 11768 2008-11-04 20:52:08Z lem9 $
  */
 
 /**
@@ -200,7 +200,7 @@ if (empty($memory_limit)) {
     $memory_limit = 2 * 1024 * 1024;
 }
 // In case no memory limit we work on 10MB chunks
-if ($memory_limit = -1) {
+if ($memory_limit == -1) {
     $memory_limit = 10 * 1024 * 1024;
 }
 
@@ -316,8 +316,7 @@ if ($import_file != 'none' && !$error) {
 }
 
 // Convert the file's charset if necessary
-if ($cfg['AllowAnywhereRecoding'] && $allow_recoding
-    && isset($charset_of_file)) {
+if ($cfg['AllowAnywhereRecoding'] && isset($charset_of_file)) {
     if ($charset_of_file != $charset) {
         $charset_conversion = TRUE;
     }

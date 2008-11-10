@@ -1,10 +1,10 @@
 <?php
-/* vim: expandtab sw=4 ts=4 sts=4: */
+/* vim: set expandtab sw=4 ts=4 sts=4: */
 /**
  * Test for blowfish encryption.
  *
  * @package phpMyAdmin-test
- * @version $Id: PMA_escapeJsString_test.php 10237 2007-04-01 08:23:23Z cybot_tm $
+ * @version $Id: PMA_blowfish_test.php 11813 2008-11-07 17:35:40Z lem9 $
  */
 
 /**
