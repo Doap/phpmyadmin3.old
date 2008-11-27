@@ -2,7 +2,7 @@
 phpMyAdmin - ChangeLog
 ----------------------
 
-$Id: ChangeLog 11805 2008-11-06 22:24:08Z nijel $
+$Id: ChangeLog 11886 2008-11-17 23:13:52Z lem9 $
 $HeadURL: https://phpmyadmin.svn.sourceforge.net/svnroot/phpmyadmin/trunk/phpMyAdmin/ChangeLog $
 
 3.1.0.0 (not yet released)
@@ -31,7 +31,13 @@ $HeadURL: https://phpmyadmin.svn.sourceforge.net/svnroot/phpmyadmin/trunk/phpMyA
 + rfe #1276463 [search] Search empty/not empty values 
 + rfe #823652 [structure] ENUM values: field size too small 
 - [lang] Persian update, thanks to Goolex - goolex 
-- [lang] Czech update, thanks to Nicky 726.
+- [lang] Czech update, thanks to Ondřej Vadinský.
+- patch #2255890 [lang] English-language cleanup,
+  thanks to Isaac Bennetch - ibennetch
++ [lang] Norwegian update, thanks to Sven-Erik Andersen 
++ [lang] Hungarian update, thanks to Jozsef Tamas Herczeg - dodika 
++ [lang] French update by Marc Delisle - lem9
+- bug #2222344 [display] Query involving a function shown as binary 
 
 3.0.2.0 (not yet released)
 - [lang] Italian update, thanks to Luca and fantu

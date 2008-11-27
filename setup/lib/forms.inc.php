@@ -15,7 +15,7 @@
  * @package    phpMyAdmin-setup
  * @author     Piotr Przybylski <piotrprz@gmail.com>
  * @license    http://www.gnu.org/licenses/gpl.html GNU GPL 2.0
- * @version    $Id: forms.inc.php 11645 2008-10-09 16:39:45Z crackpl $
+ * @version    $Id: forms.inc.php 11875 2008-11-13 20:02:18Z crackpl $
  */
 
 $forms = array();
@@ -34,12 +34,12 @@ $forms['Server'] = array('Servers' => array(1 => array(
     'auth_type',
     'user',
     'password',
-    'nopassword')));
+    'nopassword',
+    'auth_swekey_config' => './swekey.conf')));
 $forms['Server_login_options'] = array('Servers' => array(1 => array(
     'SignonSession',
     'SignonURL',
-    'LogoutURL',
-    'auth_swekey_config' => './swekey.conf')));
+    'LogoutURL')));
 $forms['Server_config'] = array('Servers' => array(1 => array(
     'only_db',
     'hide_db',

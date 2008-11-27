@@ -3,7 +3,7 @@
 /**
  * library for displaying table with results from all sort of select queries
  *
- * @version $Id: display_tbl.lib.php 11627 2008-10-02 16:55:44Z lem9 $
+ * @version $Id: display_tbl.lib.php 11886 2008-11-17 23:13:52Z lem9 $
  */
 
 /**
@@ -566,7 +566,7 @@ function PMA_displayTableHeaders(&$is_display, &$fields_meta, $fields_cnt = 0, $
 
         echo '<div class="formelement">';
         PMA_generate_html_checkbox('display_binary', $GLOBALS['strShow'] . ' BINARY', ! empty($_SESSION['userconf']['display_binary']), false);
-
+        echo '<br />';
         PMA_generate_html_checkbox('display_blob', $GLOBALS['strShow'] . ' BLOB', ! empty($_SESSION['userconf']['display_blob']), false);
         echo '</div>';
 
@@ -1659,6 +1659,11 @@ function PMA_displayTable_checkConfigParams()
     } elseif (isset($_REQUEST['display_options_form'])) {
         // we know that the checkbox was unchecked
         unset($_SESSION['userconf']['query'][$sql_key]['display_binary']);
+    } else {
+        // selected by default because some operations like OPTIMIZE TABLE
+        // and all queries involving functions return "binary" contents,
+        // according to low-level field flags
+        $_SESSION['userconf']['query'][$sql_key]['display_binary'] = true;
     }
 
     if (isset($_REQUEST['display_blob'])) {

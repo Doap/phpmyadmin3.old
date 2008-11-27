@@ -5,7 +5,7 @@
  * @package    phpMyAdmin-setup
  * @author     Piotr Przybylski <piotrprz@gmail.com>
  * @license    http://www.gnu.org/licenses/gpl.html GNU GPL 2.0
- * @version    $Id: FormDisplay.tpl.php 11650 2008-10-14 10:31:07Z crackpl $
+ * @version    $Id: FormDisplay.tpl.php 11874 2008-11-13 19:21:34Z crackpl $
  */
 
 /**
@@ -122,8 +122,8 @@ function display_input($path, $name, $description = '', $type, $value, $value_is
         <label for="<?php echo htmlspecialchars($path) ?>"><?php echo $name ?></label>
         <?php if (!empty($opts['doc']) || !empty($opts['wiki'])): ?>
         <span class="doc">
-            <?php if (!empty($opts['doc'])) { ?><a href="<?php echo $opts['doc']  ?>"><img class="icon" src="../<?php echo $GLOBALS['cfg']['ThemePath'] ?>/original/img/b_help.png" width="11" height="11" alt="Doc" title="<?php echo $GLOBALS['strDocu'] ?>" /></a><?php } ?>
-            <?php if (!empty($opts['wiki'])){ ?><a href="<?php echo $opts['wiki'] ?>"><img class="icon" src="../<?php echo $GLOBALS['cfg']['ThemePath'] ?>/original/img/b_info.png" width="11" height="11" alt="Wiki" title="Wiki" /></a><?php } ?>
+            <?php if (!empty($opts['doc'])) { ?><a href="<?php echo $opts['doc']  ?>" target="documentation"><img class="icon" src="../<?php echo $GLOBALS['cfg']['ThemePath'] ?>/original/img/b_help.png" width="11" height="11" alt="Doc" title="<?php echo $GLOBALS['strDocu'] ?>" /></a><?php } ?>
+            <?php if (!empty($opts['wiki'])){ ?><a href="<?php echo $opts['wiki'] ?>" target="wiki"><img class="icon" src="../<?php echo $GLOBALS['cfg']['ThemePath'] ?>/original/img/b_info.png" width="11" height="11" alt="Wiki" title="Wiki" /></a><?php } ?>
         </span>
         <?php endif; ?>
         <?php if (!empty($description)) { ?><small><?php echo $description ?></small><?php } ?>
