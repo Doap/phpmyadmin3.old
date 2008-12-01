@@ -4,7 +4,7 @@
  * Test for blowfish encryption.
  *
  * @package phpMyAdmin-test
- * @version $Id: PMA_blowfish_test.php 11813 2008-11-07 17:35:40Z lem9 $
+ * @version $Id: PMA_blowfish_test.php 11965 2008-11-23 21:11:59Z lem9 $
  */
 
 /**
@@ -43,14 +43,14 @@ class PMA_blowfish_test extends PHPUnit_Framework_TestCase
     {
         $secret = '$%ÄüfuDFRR';
         $decrypted = '12345678';
-        $encrypted = 'p0nz15awFT4=';
+        $encrypted = 'kO/kc4j/nyk=';
         $this->assertEquals($encrypted, PMA_blowfish_encrypt($decrypted, $secret));
     }
 
     public function testDecrypt()
     {
         $secret = '$%ÄüfuDFRR';
-        $encrypted = 'p0nz15awFT4=';
+        $encrypted = 'kO/kc4j/nyk=';
         $decrypted = '12345678';
         $this->assertEquals($decrypted, PMA_blowfish_decrypt($encrypted, $secret));
     }

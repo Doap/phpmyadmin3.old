@@ -4,7 +4,7 @@
  * Core script for import, this is just the glue around all other stuff
  *
  * @uses    PMA_Bookmark_getList()
- * @version $Id: import.php 11768 2008-11-04 20:52:08Z lem9 $
+ * @version $Id: import.php 11934 2008-11-21 17:35:47Z lem9 $
  */
 
 /**
@@ -350,7 +350,7 @@ if (!$error) {
     }
 }
 
-if (! $error && $import_handle !== FALSE) {
+if (! $error && FALSE !== $import_handle && NULL !== $import_handle) {
     fclose($import_handle);
 }
 
