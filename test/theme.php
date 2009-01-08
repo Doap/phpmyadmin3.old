@@ -5,7 +5,7 @@
  *
  * @uses    libraries/common.inc.php        global fnctions
  * @package phpMyAdmin-test
- * @version $Id: theme.php 11677 2008-10-25 13:37:54Z lem9 $
+ * @version $Id: theme.php 12163 2009-01-01 21:39:21Z lem9 $
  */
 
 chdir('..');
@@ -137,7 +137,7 @@ $tabs['import']['link'] = 'server_import.php';
 $tabs['import']['text'] = 'active';
 $tabs['import']['class'] = 'active';
 
-echo PMA_getTabs($tabs);
+echo PMA_getTabs($tabs, array());
 unset($tabs);
 
 if (@file_exists($pmaThemeImage . 'logo_right.png')) {
