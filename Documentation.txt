@@ -11,7 +11,7 @@
   * Translators
   * Glossary
 
-phpMyAdmin 3.1.2-rc1 Documentation
+phpMyAdmin 3.1.2 Documentation
 
   * phpMyAdmin homepage
   * SourceForge phpMyAdmin project page
@@ -20,7 +20,7 @@ phpMyAdmin 3.1.2-rc1 Documentation
       + Version history: ChangeLog
       + General notes: README
       + License: LICENSE
-  * Documentation version: $Id: Documentation.html 12173 2009-01-07 17:32:54Z
+  * Documentation version: $Id: Documentation.html 12197 2009-01-19 17:32:29Z
     lem9 $
 
 Requirements
