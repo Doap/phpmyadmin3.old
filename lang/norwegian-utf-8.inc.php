@@ -1,5 +1,5 @@
 <?php
-/* $Id: norwegian-utf-8.inc.php 12304 2009-03-24 12:56:58Z nijel $ */
+/* $Id: norwegian-utf-8.inc.php 12377 2009-04-19 12:01:48Z lem9 $ */
 
 /**
  * Translated by Sven-Erik Andersen <sven DOT erik DOT andersen AT gmail DOT com>
@@ -316,7 +316,6 @@ $strFileNameTemplateDescriptionTable = 'tabellnavn';
 $strFileNameTemplateRemember = 'husk malen';
 $strFiles = 'Filer';
 $strFileToImport = 'Fil for importering';
-$strFixed = 'statisk';
 $strFlushPrivilegesNote = 'Merk: phpMyAdmin får brukerprivilegiene direkte fra MySQL privilegietabeller. Innholdet i disse tabellene kan være forskjellig fra de privilegiene tjeneren bruker hvis det er utført manuelle endringer på den. I så fall bør du %soppfriske privilegiene%s før du fortsetter.';
 $strFlushQueryCache = 'Flush query cache';
 $strFlushTable = 'Oppfrisk tabellen ("FLUSH")';
@@ -829,7 +828,6 @@ $strSetupServerSecurityInfoMsg = 'Hvis du føler at dette er nødvending, så br
 $strSetupServerSslMsg = 'Du bør bruke SSL tilkobling dersom din webtjener har støtte for det';
 $strSetupServerExtensionMsg = 'Du bør bruke mysqli for bedre ytelse';
 $strSetupServerAuthConfigMsg = 'Du valgte [kbd]config[/kbd] autentisering og inkluderte brukernavn og passord for autmatisk innlogging, noe som ikke anbefales for aktive tjenere. Hvem som helst som kjenner phpMyAdmin URL kan direkte få adgang til ditt phpMyAdmin panel. Velg [a@?page=servers&amp;mode=edit&amp;id=%1$d#tab_Server]autentiseringstype[/a] [kbd]cookie[/kbd] eller [kbd]http[/kbd].';
-$strSetupServerNoPasswordRootMsg = 'Du tillater å koble til tjeneren som root uten et passord.';
 $strSetupBlowfishSecretMsg = 'Du hadde ikke satt blowfist hemmelig nøkkel eller slått på cookie autentisering så nøkkelen ble generert for deg. Den brukes til å krypterer cookies.';
 $strSetupBlowfishSecretLengthMsg = 'Nøkkelen er for kort, den bør ha minst 8 tegn';
 $strSetupBlowfishSecretCharsMsg = 'Nøkkelen bør inneholde tall, bokstaver [em]og[/em] spesielle tegn';
@@ -896,9 +894,7 @@ $strSetupForm_Export_defaults_desc = 'Endre standard eksportinnstillinger';
 $strSetupForm_Query_window = 'Spørringsvindu';
 $strSetupForm_Query_window_desc = 'Endre spørringsvinduinnstillinger';
 $strSetupServers_verbose_name = 'Fult navn for denne tjeneren';
-$strSetupServers_verbose_desc = 'Vertsnavn hvor MySQL tjeneren kjører';
 $strSetupServers_host_name = 'Tjenervertsnavn';
-$strSetupServers_host_desc = '';
 $strSetupServers_port_name = 'Tjenerport';
 $strSetupServers_port_desc = 'Porten som MySQL tjeneren lytter på, la stå tom for standard verdi';
 $strSetupServers_socket_name = 'Tjenersokkel';
@@ -930,7 +926,6 @@ $strSetupServers_only_db_desc = 'Du kan bruke MySQL jokertegn (% and _), escape 
 $strSetupServers_hide_db_name = 'Skul databaser';
 $strSetupServers_hide_db_desc = 'Skjul databaser som matcher regular expression (PCRE)';
 $strSetupServers_AllowRoot_name = 'Tillat innlogging som root';
-$strSetupServers_AllowNoPasswordRoot_name = 'Tillat root uten passord';
 $strSetupServers_DisableIS_name = 'Slå av bruk av INFORMATION_SCHEMA';
 $strSetupServers_DisableIS_desc = 'Mer informasjon på [a@http://sf.net/support/tracker.php?aid=1849494]PMA bug tracker[/a] og [a@http://bugs.mysql.com/19588]MySQL Bugs[/a]';
 $strSetupServers_AllowDeny_order_name = 'Rekkefølge for vertsautentisering';
@@ -1442,4 +1437,25 @@ $strYes = 'Ja';
 $strZeroRemovesTheLimit = 'Merk: Ved å sette disse til 0 (null) fjernes begrensningen.';
 $strZip = 'Komprimert (zip)';
 
+$strSessionGCWarning = 'Your PHP parameter [a@http://php.net/manual/en/session.configuration.php#ini.session.gc-maxlifetime@]session.gc_maxlifetime[/a] is lower that cookie validity configured in phpMyAdmin, because of this, your login will expire sooner than configured in phpMyAdmin.';  //to translate
+$strSetupServers_host_desc = 'Hostname where MySQL server is running';  //to translate
+$strSetupServers_verbose_desc = 'A user-friendly description of this server. Leave blank to display the hostname instead.';  //to translate
+$strCreateUserDatabasePrivileges = 'Grant all privileges on database &quot;%s&quot;';  //to translate
+$strShowBinaryContents = 'Show binary contents';  //to translate
+$strShowBLOBContents = 'Show BLOB contents';  //to translate
+$strStatic = 'static';  //to translate
+$strLoginWithoutPassword = 'Login without a password is forbidden by configuration (see AllowNoPassword)';  //to translate
+$strSetupServerNoPasswordMsg = 'You allow for connecting to the server without a password.';  //to translate
+$strSetupServers_AllowNoPassword_name = 'Allow logins without a password';  //to translate
+$strHostTableExplanation = 'When Host table is used, this field is ignored and values stored in Host table are used instead.';  //to translate
+$strGetMoreThemes = 'Get more themes!';  //to translate
+$strNoneDefault = 'None';  //to translate
+$strConfigDirectoryWarning = 'Directory [code]config[/code], which is used by the setup script, still exists in your phpMyAdmin directory. You should remove it once phpMyAdmin has been configured.';  //to translate
+$strEscapeCRLF = 'Remove CRLF characters within fields';  //to translate
+$strDoNotAutoIncrementZeroValues = 'Do not use AUTO_INCREMENT for zero values';  //to translate
+$strAndSmall = 'and';  //to translate
+$strReplicationStatus = 'Replication status';  //to translate
+$strReplicationStatusInfo = 'This MySQL server works as %s in <b>replication</b> process. For further information about replication status on the server, please visit the <a href="#replication">replication section</a>.';  //to translate
+$strReplicationStatus_master = 'Master status';  //to translate
+$strReplicationStatus_slave = 'Slave status';  //to translate
 ?>

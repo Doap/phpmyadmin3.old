@@ -1,5 +1,5 @@
 <?php
-/* $Id: catalan-utf-8.inc.php 12304 2009-03-24 12:56:58Z nijel $ */
+/* $Id: catalan-utf-8.inc.php 12377 2009-04-19 12:01:48Z lem9 $ */
 
 $charset = 'utf-8';
 $allow_recoding = TRUE;
@@ -313,7 +313,6 @@ $strFileNameTemplate = 'Nom d\'arxiu de plantilla';
 $strFileNameTemplateRemember = 'Recordar plantilla';
 $strFiles = 'Arxius';
 $strFileToImport = 'Arxiu a importar';
-$strFixed = 'fixe';
 $strFlushPrivilegesNote = 'Nota: phpMyAdmin obté els permissos de l\'usuari directament de les taules de permissos de l\' MySQL. El contingut d\'aquestes taules pot diferir dels permissos que utilitza el servidor si s\'han fet canvis manualment. En aquest cas, es necessari %srecarregar els permissos%s abans de continuar.';
 $strFlushQueryCache = 'Buidar la memòria intermèdia de consultes';
 $strFlushTable = 'Buidar la memòria cau de la taula ("FLUSH")';
@@ -998,13 +997,11 @@ $strSetupSaveDir_desc = 'Directori del servidor ón pots desar les exportacions'
 $strSetupSaveDir_name = 'Directori de Desades';
 $strSetupServerAuthConfigMsg = 'Has triat el tipus d\'autenticació [kbd]config[/kbd] i has inclós el nom d\'usuari i la contrasenya per connexions automàtiques, que es una opció no recomanable per a servidors actius. Qualsevol que conegui la teva URL de phpMyAdmin pot accedir al teu panel directament. Estableix el [a@?page=servers&amp;mode=edit&amp;id=%1$d#tab_Server]tipus d\'autenticació[/a] a [kbd]cookie[/kbd] o [kbd]http[/kbd].';
 $strSetupServerExtensionMsg = 'Hauries d\'utilitzar mysqli per raons de rendiment';
-$strSetupServerNoPasswordRootMsg = 'Permets connexions al servidor com a root sense contrasenya.';
 $strSetupServersAdd = 'Afegir un nou servidor';
 $strSetupServers_AllowDeny_order_desc = 'Deixa en blanc si no l\'utilitzes';
 $strSetupServers_AllowDeny_order_name = 'Ordre d\'autenticació del servidor';
 $strSetupServers_AllowDeny_rules_desc = 'Deixa en blanc per als predeterminats';
 $strSetupServers_AllowDeny_rules_name = 'Regles d\'autenticació del servidor';
-$strSetupServers_AllowNoPasswordRoot_name = 'Permetre root sense contrasenya';
 $strSetupServers_AllowRoot_name = 'Permetre la connexió de root';
 $strSetupServers_auth_swekey_config_desc = 'El camí de l\'arxiu de configuració per [a@http://swekey.com]autenticació per maquinari SweKey[/a] (no trobat al teu arrel de documents; es recomana a: /etc/swekey.conf)';
 $strSetupServers_auth_swekey_config_name = 'Arxiu de configuració SweKey';
@@ -1035,7 +1032,6 @@ $strSetupServers_hide_db_desc = 'Amagar les bases de dades que compleixin una ex
 $strSetupServers_hide_db_name = 'Amagar bases de dades';
 $strSetupServers_history_desc = 'Deixa en blanc per desactivar el suport d\'historial de consultes SQL, predeterminat: [kbd]pma_history[/kbd]';
 $strSetupServers_history_name = 'Taula d\'historial de consultes SQL';
-$strSetupServers_host_desc = '';
 $strSetupServers_host_name = 'Nom del servidor';
 $strSetupServers_LogoutURL_name = 'URL de desconnexió';
 $strSetupServers_nopassword_desc = 'Intentar connectar sense contrasenya';
@@ -1070,7 +1066,6 @@ $strSetupServers_user_desc = 'Deixa en blanc si no utilitzes l\'autenticació co
 $strSetupServers_user_name = 'Usuari per autenticació config';
 $strSetupServers_verbose_check_desc = 'Desactiva si saps que les teves taules pma_* estàn actualitzades a la darrera versió. Aixó evita problemes de comprobacions de compatibilitat i així aumenta el rendiment';
 $strSetupServers_verbose_check_name = 'Comprobació explicativa';
-$strSetupServers_verbose_desc = 'Nom de l\'equip ón s\'executa el servidor MySQL';
 $strSetupServers_verbose_name = 'Nom explicatiu d\'aquest servidor';
 $strSetupSetValue = 'Establir valor: %s';
 $strSetupShowAll_desc = 'Si a un usuari se l\'hauria de mostrar el botó &quot;mostrar tots (els registres)&quot;';
@@ -1439,4 +1434,28 @@ $strYes = 'Si';
 $strZeroRemovesTheLimit = 'Nota: Es treu el limit establint aquestes opcions a 0 (zero).';
 $strZip = '"comprimit amb zip"';
 
+// To translate:
+
+$strSessionGCWarning = 'Your PHP parameter [a@http://php.net/manual/en/session.configuration.php#ini.session.gc-maxlifetime@]session.gc_maxlifetime[/a] is lower that cookie validity configured in phpMyAdmin, because of this, your login will expire sooner than configured in phpMyAdmin.';  //to translate
+
+$strSetupServers_host_desc = 'Hostname where MySQL server is running';  //to translate
+$strSetupServers_verbose_desc = 'A user-friendly description of this server. Leave blank to display the hostname instead.';  //to translate
+$strCreateUserDatabasePrivileges = 'Grant all privileges on database &quot;%s&quot;';  //to translate
+$strShowBinaryContents = 'Show binary contents';  //to translate
+$strShowBLOBContents = 'Show BLOB contents';  //to translate
+$strStatic = 'static';  //to translate
+$strLoginWithoutPassword = 'Login without a password is forbidden by configuration (see AllowNoPassword)';  //to translate
+$strSetupServerNoPasswordMsg = 'You allow for connecting to the server without a password.';  //to translate
+$strSetupServers_AllowNoPassword_name = 'Allow logins without a password';  //to translate
+$strHostTableExplanation = 'When Host table is used, this field is ignored and values stored in Host table are used instead.';  //to translate
+$strGetMoreThemes = 'Get more themes!';  //to translate
+$strNoneDefault = 'None';  //to translate
+$strConfigDirectoryWarning = 'Directory [code]config[/code], which is used by the setup script, still exists in your phpMyAdmin directory. You should remove it once phpMyAdmin has been configured.';  //to translate
+$strEscapeCRLF = 'Remove CRLF characters within fields';  //to translate
+$strDoNotAutoIncrementZeroValues = 'Do not use AUTO_INCREMENT for zero values';  //to translate
+$strAndSmall = 'and';  //to translate
+$strReplicationStatus = 'Replication status';  //to translate
+$strReplicationStatusInfo = 'This MySQL server works as %s in <b>replication</b> process. For further information about replication status on the server, please visit the <a href="#replication">replication section</a>.';  //to translate
+$strReplicationStatus_master = 'Master status';  //to translate
+$strReplicationStatus_slave = 'Slave status';  //to translate
 ?>

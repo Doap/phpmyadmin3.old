@@ -1,5 +1,5 @@
 <?php
-/* $Id: finnish-utf-8.inc.php 12304 2009-03-24 12:56:58Z nijel $ */
+/* $Id: finnish-utf-8.inc.php 12377 2009-04-19 12:01:48Z lem9 $ */
 
 /*
  * Translated by Jouni Kähkönen, <address withdrawn>
@@ -319,7 +319,6 @@ $strFileNameTemplateRemember = 'muista pohja';
 $strFileNameTemplate = 'Tiedostonimen pohja';
 $strFiles = 'Tiedostot';
 $strFileToImport = 'Tuotava tiedosto';
-$strFixed = 'kiinteä';
 $strFlushPrivilegesNote = 'Huom: PhpMyAdmin hakee käyttäjien käyttöoikeudet suoraan MySQL-palvelimen käyttöoikeustauluista. Näiden taulujen sisältö saattaa poiketa palvelimen käyttämistä käyttöoikeuksista, jos tauluihin on tehty muutoksia käsin. Tällöin %skäyttöoikeudet on ladattava uudestaan%s ennen jatkamista.';
 $strFlushQueryCache = 'Tyhjennä kyselymuisti';
 $strFlushTables = 'Tyhjennä (sulje) kaikki taulut';
@@ -779,6 +778,7 @@ $strServerTabVariables = 'Muuttujat';
 $strServerTrafficNotes = '<b>Palvelinliikenne</b>: Nämä taulukot näyttävät tämän MySQL-palvelimen verkkoliikennetilastot käynnistyksestä lähtien.';
 $strServerVars = 'Palvelimen muuttujat ja asetukset';
 $strServerVersion = 'Palvelimen versio';
+$strSessionGCWarning = 'PHP-parametri [a@http://php.net/manual/en/session.configuration.php#ini.session.gc-maxlifetime@]session.gc_maxlifetime[/a] on matalampi kuin phpMyAdminissa määritetty evästekelpoisuus. Siksi kirjautumisesi erääntyy nopeammin kuin phpMyAdminissa on määritetty.';
 $strSessionStartupErrorGeneral = 'Istuntoa ei voi aloittaa virheettömästi. Tarkista PHP:n tai verkkopalvelimen lokitiedostojen virheilmoitukset ja määritä PHP-asennuksen asetukset oikein.';
 $strSessionValue = 'Tämän istunnon arvo';
 $strSetEnumVal = 'Jos sarakkeen tietotyyppi on "enum" tai "set", syötä vaaditut arvot tässä muodossa: \'a\',\'b\',\'c\'...<br />Jos tarvitset arvoissa kenoviivaa ("\") tai heittomerkkiä ("\'"), laita merkin eteen kenoviiva (esim. \'\\\\xyz\' tai \'a\\\'b\').';
@@ -1004,13 +1004,11 @@ $strSetupSaveDir_desc = 'Hakemisto, jonne viennit voi tallentaa palvelimella';
 $strSetupSaveDir_name = 'Tallennushakemisto';
 $strSetupServerAuthConfigMsg = 'Asetit [kbd]config[/kbd]-todennustyypin ja sisällytit käyttäjänimen ja salasanan automaattista kirjautumista varten. Tämä ei ole suotava vaihtoehto oikeille palvelimille. Joka tietää tai arvaa phpMyAdmin-osoitteesi pystyy suoraan käyttämään phpMyAdmin-paneeliasi.  [a@?page=servers&amp;mode=edit&amp;id=%1$d#tab_Server]Todennustyypiksi[/a] kannattaa asettaa [kbd]cookie[/kbd] tai [kbd]http[/kbd].';
 $strSetupServerExtensionMsg = 'Suorituskykysyistä tulisi käyttää mysqli-laajennusta.';
-$strSetupServerNoPasswordRootMsg = 'Sallit yhteyden palvelimeen pääkäyttäjänä ilman salasanaa.';
 $strSetupServersAdd = 'Lisää uusi palvelin';
 $strSetupServers_AllowDeny_order_desc = 'Jätä tyhjäksi, jos tätä ei käytetä';
 $strSetupServers_AllowDeny_order_name = 'Palvelintodennuksen järjestys';
 $strSetupServers_AllowDeny_rules_desc = 'Käytä oletusarvoja jättämällä tyhjäksi';
 $strSetupServers_AllowDeny_rules_name = 'Palvelintodennuksen säännöt';
-$strSetupServers_AllowNoPasswordRoot_name = 'Salli pääkäyttäjä ilman salasanaa';
 $strSetupServers_AllowRoot_name = 'Salli pääkäyttäjän kirjautuminen';
 $strSetupServers_auth_swekey_config_desc = '[a@http://swekey.com]SweKey-laitteistotodennuksen[/a] asetustiedoston polku (ei dokumenttijuuressa; suositeltu: /etc/swekey.conf)';
 $strSetupServers_auth_swekey_config_name = 'SweKey-asetustiedosto';
@@ -1041,7 +1039,6 @@ $strSetupServers_hide_db_desc = 'Piilota tietokannat, jotka vastaavat säännöl
 $strSetupServers_hide_db_name = 'Piilota tietokannat';
 $strSetupServers_history_desc = 'Jätä tyhjäksi, jos et halua SQL-kyselyhistorian tukea; oletusarvo: [kbd]pma_history[/kbd]';
 $strSetupServers_history_name = 'SQL-kyselyhistorian taulu';
-$strSetupServers_host_desc = '';
 $strSetupServers_host_name = 'Palvelimen verkkonimi';
 $strSetupServers_LogoutURL_name = 'Uloskirjautumisen verkko-osoite';
 $strSetupServers_nopassword_desc = 'Yritä yhdistää ilman salasanaa';
@@ -1076,7 +1073,6 @@ $strSetupServers_user_desc = 'Jätä tyhjäksi, jos et käytä config-todennusta
 $strSetupServers_user_name = 'Config-todennuksen käyttäjä';
 $strSetupServers_verbose_check_desc = 'Poista käytöstä, mikäli tiedät pma_*-taulujesi olevan ajan tasalla. Tämä estää yhteensopivuustarkistukset ja lisää siten suorituskykyä.';
 $strSetupServers_verbose_check_name = 'Yksityiskohtainen tarkistus';
-$strSetupServers_verbose_desc = 'MySQL-palvelimen verkkonimi';
 $strSetupServers_verbose_name = 'Tämän palvelimen yksityiskohtainen nimi';
 $strSetupSetValue = 'Aseta arvo: %s';
 $strSetupShowAll_desc = 'Pitääkö käyttäjälle näyttää "Näytä kaikki (tietueet)" -painike';
@@ -1445,4 +1441,24 @@ $strYes = 'Kyllä';
 $strZeroRemovesTheLimit = 'Huom: Näiden valintojen asettaminen nollaksi (0) poistaa rajoituksen.';
 $strZip = '"zip-pakattu"';
 
+$strSetupServers_host_desc = 'Hostname where MySQL server is running';  //to translate
+$strSetupServers_verbose_desc = 'A user-friendly description of this server. Leave blank to display the hostname instead.';  //to translate
+$strCreateUserDatabasePrivileges = 'Grant all privileges on database &quot;%s&quot;';  //to translate
+$strShowBinaryContents = 'Show binary contents';  //to translate
+$strShowBLOBContents = 'Show BLOB contents';  //to translate
+$strStatic = 'static';  //to translate
+$strLoginWithoutPassword = 'Login without a password is forbidden by configuration (see AllowNoPassword)';  //to translate
+$strSetupServerNoPasswordMsg = 'You allow for connecting to the server without a password.';  //to translate
+$strSetupServers_AllowNoPassword_name = 'Allow logins without a password';  //to translate
+$strHostTableExplanation = 'When Host table is used, this field is ignored and values stored in Host table are used instead.';  //to translate
+$strGetMoreThemes = 'Get more themes!';  //to translate
+$strNoneDefault = 'None';  //to translate
+$strConfigDirectoryWarning = 'Directory [code]config[/code], which is used by the setup script, still exists in your phpMyAdmin directory. You should remove it once phpMyAdmin has been configured.';  //to translate
+$strEscapeCRLF = 'Remove CRLF characters within fields';  //to translate
+$strDoNotAutoIncrementZeroValues = 'Do not use AUTO_INCREMENT for zero values';  //to translate
+$strAndSmall = 'and';  //to translate
+$strReplicationStatus = 'Replication status';  //to translate
+$strReplicationStatusInfo = 'This MySQL server works as %s in <b>replication</b> process. For further information about replication status on the server, please visit the <a href="#replication">replication section</a>.';  //to translate
+$strReplicationStatus_master = 'Master status';  //to translate
+$strReplicationStatus_slave = 'Slave status';  //to translate
 ?>

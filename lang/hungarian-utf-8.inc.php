@@ -1,5 +1,5 @@
 <?php
-/* $Id: hungarian-utf-8.inc.php 12304 2009-03-24 12:56:58Z nijel $ */
+/* $Id: hungarian-utf-8.inc.php 12377 2009-04-19 12:01:48Z lem9 $ */
 // Peter Bakondy <bakondyp@freemail.hu>
 // Mihály Mészáros <poizon at sth dot sze dot hu>
 // József Tamás Herczeg <localicer @NOSPAM@ gmail DOT com>
@@ -321,7 +321,6 @@ $strFileNameTemplate = 'Fájlnévsablon';
 $strFileNameTemplateRemember = 'a sablon megjegyzése';
 $strFiles = 'Fájlok';
 $strFileToImport = 'Importálandó fájl';
-$strFixed = 'rögzített';
 $strFlushPrivilegesNote = 'Megjegyzés: a phpMyAdmin a felhasználók jogait közvetlenül a MySQL privilégium táblákból veszi. Ezen táblák tartalma eltérhet a szerver által használt jogoktól, ha a módosításuk kézzel történt. Ebben az esetben %stöltse be újra a jogokat%s a folytatás előtt.';
 $strFlushQueryCache = 'Lekérdezési gyorsítótár kiírása';
 $strFlushTables = 'Összes tábla kiírása (bezárása)';
@@ -1006,13 +1005,11 @@ $strSetupSaveDir_desc = 'A könyvtár, melybe az exportálások menthetők a sze
 $strSetupSaveDir_name = 'Mentési könyvtár';
 $strSetupServerAuthConfigMsg = 'Ön a [kbd]konfigurációs[/kbd] hitelesítési típust állította be, s az automatikus bejelentkezéshez megadta a felhasználónevet és a jelszót, ami működő állomások esetén nemkívánatos beállítás. Bárki, aki tudja vagy kitalálja a phpMyAdmin URL-címét, közvetlenül hozzá tud férni a phpMyAdmin panelhoz. Állítsa [kbd]cookie[/kbd] vagy [kbd]http[/kbd] módra a [a@?page=servers&amp;mode=edit&amp;id=%1$d#tab_Server]hitelesítési típust[/a].';
 $strSetupServerExtensionMsg = 'Teljesítmény okokból használja a mysqli kiterjesztést';
-$strSetupServerNoPasswordRootMsg = 'Jelszó nélküli root felhasználóként engedélyezi a csatlakozást a szerverhez.';
 $strSetupServersAdd = 'Új szerver hozzáadása';
 $strSetupServers_AllowDeny_order_desc = 'Hagyja üresen, ha nem használja';
 $strSetupServers_AllowDeny_order_name = 'Az állomás hitelesítési sorrendje';
 $strSetupServers_AllowDeny_rules_desc = 'Hagyja üresen az alapértelmezésekhez';
 $strSetupServers_AllowDeny_rules_name = 'Az állomás hitelesítési szabályai';
-$strSetupServers_AllowNoPasswordRoot_name = 'A jelszó nélküli root felhasználó engedélyezése';
 $strSetupServers_AllowRoot_name = 'A root bejelentkezés engedélyezése';
 $strSetupServers_auth_swekey_config_desc = 'A [a@http://swekey.com]SweKey hardveres hitelesítés[/a] konfigurációs fájljának elérési útja (nem a dokumentumgyökérben található; javaslat: /etc/swekey.conf)';
 $strSetupServers_auth_swekey_config_name = 'SweKey konfigurációs fájl';
@@ -1043,7 +1040,6 @@ $strSetupServers_hide_db_desc = 'A (PCRE) reguláris kifejezéssel megegyező ad
 $strSetupServers_hide_db_name = 'Adatbázisok elrejtése';
 $strSetupServers_history_desc = 'Hagyja üresen, ha nincs szükség az SQL-lekérdezések előzményeinek támogatására, alapértelmezés: [kbd]pma_history[/kbd]';
 $strSetupServers_history_name = 'SQL-lekérdezések előzményeinek táblája';
-$strSetupServers_host_desc = '';
 $strSetupServers_host_name = 'A szerver állomásneve';
 $strSetupServers_LogoutURL_name = 'Kijelentkezési URL';
 $strSetupServers_nopassword_desc = 'A csatlakozás jelszó nélküli megkísérlése';
@@ -1078,7 +1074,6 @@ $strSetupServers_user_desc = 'Hagyja üresen, ha nem a konfigurációs hitelesí
 $strSetupServers_user_name = 'A konfigurációs hitelesítés felhasználóneve';
 $strSetupServers_verbose_check_desc = 'Tiltsa le, ha tudja, hogy a pma_* táblák naprakészek. Ez megelőzi a kompatibilitási ellenőrzéseket, s ezáltal növeli a teljesítményt';
 $strSetupServers_verbose_check_name = 'Részletes ellenőrzés';
-$strSetupServers_verbose_desc = 'Az állomás neve, ahol a MySQL szerver fut';
 $strSetupServers_verbose_name = 'A szerver részletes neve';
 $strSetupSetValue = 'Adja meg az értéket: %s';
 $strSetupShowAll_desc = 'Meg kell-e jeleníteni egy felhasználó számára az &quot;az összes (rekord) megjelenítése&quot; gombot';
@@ -1447,4 +1442,25 @@ $strYes = 'Igen';
 $strZeroRemovesTheLimit = 'Megjegyzés: Ezen beállítások 0-ra (nulla) állítása eltávolítja a korlátozást.';
 $strZip = '"zip tömörítés"';
 
+$strSessionGCWarning = 'Your PHP parameter [a@http://php.net/manual/en/session.configuration.php#ini.session.gc-maxlifetime@]session.gc_maxlifetime[/a] is lower that cookie validity configured in phpMyAdmin, because of this, your login will expire sooner than configured in phpMyAdmin.';  //to translate
+$strSetupServers_host_desc = 'Hostname where MySQL server is running';  //to translate
+$strSetupServers_verbose_desc = 'A user-friendly description of this server. Leave blank to display the hostname instead.';  //to translate
+$strCreateUserDatabasePrivileges = 'Grant all privileges on database &quot;%s&quot;';  //to translate
+$strShowBinaryContents = 'Show binary contents';  //to translate
+$strShowBLOBContents = 'Show BLOB contents';  //to translate
+$strStatic = 'static';  //to translate
+$strLoginWithoutPassword = 'Login without a password is forbidden by configuration (see AllowNoPassword)';  //to translate
+$strSetupServerNoPasswordMsg = 'You allow for connecting to the server without a password.';  //to translate
+$strSetupServers_AllowNoPassword_name = 'Allow logins without a password';  //to translate
+$strHostTableExplanation = 'When Host table is used, this field is ignored and values stored in Host table are used instead.';  //to translate
+$strGetMoreThemes = 'Get more themes!';  //to translate
+$strNoneDefault = 'None';  //to translate
+$strConfigDirectoryWarning = 'Directory [code]config[/code], which is used by the setup script, still exists in your phpMyAdmin directory. You should remove it once phpMyAdmin has been configured.';  //to translate
+$strEscapeCRLF = 'Remove CRLF characters within fields';  //to translate
+$strDoNotAutoIncrementZeroValues = 'Do not use AUTO_INCREMENT for zero values';  //to translate
+$strAndSmall = 'and';  //to translate
+$strReplicationStatus = 'Replication status';  //to translate
+$strReplicationStatusInfo = 'This MySQL server works as %s in <b>replication</b> process. For further information about replication status on the server, please visit the <a href="#replication">replication section</a>.';  //to translate
+$strReplicationStatus_master = 'Master status';  //to translate
+$strReplicationStatus_slave = 'Slave status';  //to translate
 ?>

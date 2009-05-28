@@ -1,5 +1,5 @@
 <?php
-/* $Id: dutch-utf-8.inc.php 12304 2009-03-24 12:56:58Z nijel $ */
+/* $Id: dutch-utf-8.inc.php 12377 2009-04-19 12:01:48Z lem9 $ */
 
 /*
  * Updated by "CaliMonk" <calimonk at gmx.net> on 2005/01/04.
@@ -197,6 +197,7 @@ $strCreateUserDatabase = 'Database voor gebruiker';
 $strCreateUserDatabaseName = 'Maak een database met dezelfde naam en geef alle rechten hierop';
 $strCreateUserDatabaseNone = 'Geen';
 $strCreateUserDatabaseWildcard = 'Geef alle rechten op de wildcard naam (gebruikersnaam\_%)';
+$strCreateUserDatabasePrivileges = 'Geef alle rechten op de database &quot;%s&quot;';
 $strCreationDates = 'Creatie/Update/Controleer datum';
 $strCriteria = 'Criteria';
 $strCroatian = 'Kroatisch';
@@ -217,7 +218,7 @@ $strDatabasesDropped = '%s databases zijn succesvol verwijderd.';
 $strDatabasesStats = 'Database statistieken';
 $strDatabasesStatsDisable = 'Statistieken uitzetten';
 $strDatabasesStatsEnable = 'Statistieken aanzetten';
-$strDatabasesStatsHeavyTraffic = 'Attentie: Indien u hier Database statistieken aanzet kan dit zorgen voor veel data verkeer tussen de webserver en de MySQL server.';
+$strDatabasesStatsHeavyTraffic = 'Attentie: Indien u hier Database statistieken aanzet kan dit zorgen voor veel dataverkeer tussen de webserver en de MySQL server.';
 $strData = 'Data';
 $strDataDict = 'Data Woordenboek';
 $strDataOnly = 'Alleen data';
@@ -323,7 +324,6 @@ $strFileNameTemplateDescriptionTable = 'tabelnaam';
 $strFileNameTemplateRemember = 'Onthoud template';
 $strFiles = 'bestanden';
 $strFileToImport = 'Te importeren bestand';
-$strFixed = 'vast';
 $strFlushPrivilegesNote = 'Opmerking: phpMyAdmin krijgt de rechten voor de gebruikers uit de MySQL privileges tabel. De content van deze tabel kan verschillen met de rechten van de server als er handmatig aanpassingen zijn aangebracht. Mocht dit het geval zijn dan moet men %sde privilege tabel vernieuwen%s voordat men verder gaat.';
 $strFlushQueryCache = 'Schoon query cache';
 $strFlushTables = 'Schoon (sluit) alle tabellen';
@@ -783,6 +783,7 @@ $strServerTabVariables = 'Variabelen';
 $strServerTrafficNotes = '<b>Serververkeer</b>: Deze tabellen geven statistieken weer van het verkeer van deze MySQL server, vanaf het moment dat hij is gestart';
 $strServerVars = 'Servervariabelen en -instellingen';
 $strServerVersion = 'Serverversie';
+$strSessionGCWarning = 'De PHP parameter [a@http://php.net/manual/en/session.configuration.php#ini.session.gc-maxlifetime@]session.gc_maxlifetime[/a] is lager dan de ingestelde cookie geldigheid in phpMyAdmin. Hierdoor verloopt uw sessie eerder dan in phpMyAdmin is ingesteld.';
 $strSessionStartupErrorGeneral = 'De sessie kan niet foutloos worden gestart. Controleer op foutmeldingen in de PHP- en webserver-log, en herstel deze.';
 $strSessionValue = 'Sessievariabelen';
 $strSetEnumVal = 'Als het veld type "enum" of "set" is, voer dan de waardes in volgens dit formaat: \'a\',\'b\',\'c\'...<br />Als u een backslash moet plaatsen ("") of een enkel aanhalingsteken ("\'") bij deze waardes, plaats er dan een backslash voor (voorbeeld \'\\\\xyz\' of \'a\\\'b\').';
@@ -1008,13 +1009,11 @@ $strSetupSaveDir_desc = 'Directory op de server waar exports kunnen worden opges
 $strSetupSaveDir_name = 'Opslag directory';
 $strSetupServerAuthConfigMsg = 'U gebruikt het [kbd]config[/kbd] authenticatie type en heeft de te gebruiken gebruikersnaam en wachtwoord hierbij opgegeven voor automatisch inloggen. Dit is niet aanbevolen voor productie systemen gezien iemand die het URL van phpMyAdmin achterhaald direct toegang heeft. Gebruik het [a@?page=servers&amp;mode=edit&amp;id=%1$d#tab_Server]authenticatie type[/a] [kbd]cookie[/kbd] of [kbd]http[/kbd].';
 $strSetupServerExtensionMsg = 'Voor betere prestaties kunt u het beste mysqli gebruiken';
-$strSetupServerNoPasswordRootMsg = 'U staat het toe dat de root gebruiker zonder wachtwoord kan inloggen';
 $strSetupServersAdd = 'Een server toevoegen';
 $strSetupServers_AllowDeny_order_desc = 'Laat dit veld leeg indien u het niet wenst te gebruiken';
 $strSetupServers_AllowDeny_order_name = 'Machine authenticatie volgorde';
 $strSetupServers_AllowDeny_rules_desc = 'Laat dit veld leeg om de standaardwaarde te gebruiken';
 $strSetupServers_AllowDeny_rules_name = 'Host authenticatie regels';
-$strSetupServers_AllowNoPasswordRoot_name = 'Inloggen als root toestaan zonder wachtwoord';
 $strSetupServers_AllowRoot_name = 'Root login toestaan';
 $strSetupServers_auth_swekey_config_desc = 'Het pad naar het configuratiebestand voor [a@http://swekey.com]SweKey hardware authenticatie[/a] (niet binnen de document root directory van uw webserver; suggestie: /etc/swekey.conf)';
 $strSetupServers_auth_swekey_config_name = 'SweKey configuratiebestand';
@@ -1045,7 +1044,6 @@ $strSetupServers_hide_db_desc = 'Verberg databases die aan de hier opgegeven reg
 $strSetupServers_hide_db_name = 'Verberg databases';
 $strSetupServers_history_desc = 'Laat dit veld leeg om geen SQL-historie te ondersteunen, standaard: [kbd]pma_history[/kbd]';
 $strSetupServers_history_name = 'SQL-query historie tabel';
-$strSetupServers_host_desc = '';
 $strSetupServers_host_name = 'Server machinenaam';
 $strSetupServers_LogoutURL_name = 'Uitlog URL';
 $strSetupServers_nopassword_desc = 'Probeer te verbinden zonder wachtwoord';
@@ -1080,7 +1078,6 @@ $strSetupServers_user_desc = 'Laat dit veld leeg indien u geen gebruik maakt van
 $strSetupServers_user_name = ' authenticatie';
 $strSetupServers_verbose_check_desc = 'Schakel dit uit wanneer u zeker weet dat uw pma_* tabellen up-to-date zijn. Dit voorkomt compatibiliteitscontroles en verbeterd daarmee de prestaties.';
 $strSetupServers_verbose_check_name = 'Uitgebreide controle';
-$strSetupServers_verbose_desc = 'Machinenaam waarop de MySQL server is geïnstalleerd';
 $strSetupServers_verbose_name = 'Uitgebreide naam voor deze server';
 $strSetupSetValue = 'Zet waarde op: %s';
 $strSetupShowAll_desc = 'Of er een &quot;Toon alle (rijen)&quot; knop moet worden getoond.';
@@ -1154,8 +1151,8 @@ $strShowSlaveStatus = 'Toon slave status';
 $strShowStatusBinlog_cache_disk_useDescr = 'Het aantal transacties dat gebruik heeft gemaakt van het tijdelijke binaire log cache, maar die groter waren dan binlog_cache_size en daarom gebruik hebben gemaakt van een tijdelijkbestand om opdrachten uit de transactie op te slaan.';
 $strShowStatusBinlog_cache_useDescr = 'Het aantal transactie dat gebruik maakte van het tijdelijke binaire log cache.';
 $strShowStatusCreated_tmp_disk_tablesDescr = 'Het aantal tijdelijke tabellen op schijf dat automatisch werd aangemaakt bij het uitvoeren van opdrachten. Indien Created_tmp_disk_tables groot is, kan het de moeite waard zijn om de waarde van tmp_table_size te verhogen, waardoor meer tijdelijke tabellen in het geheugen blijven in plaats van op schijf.';
-$strShowStatusCreated_tmp_filesDescr = 'Het aantal door tijdelijke bestanden dat werd aangemaakt.';
-$strShowStatusCreated_tmp_tablesDescr = 'Het aantal in geheugen geplaatste tijdelijke tabellen dat automatisch door de server werd aangemaakt tijdens het uitvoeren van opdrachten.';
+$strShowStatusCreated_tmp_filesDescr = 'Het aantal tijdelijke bestanden dat door MySQL werd aangemaakt.';
+$strShowStatusCreated_tmp_tablesDescr = 'Het aantal in het geheugen geplaatste tijdelijke tabellen dat automatisch door de server werd aangemaakt tijdens het uitvoeren van opdrachten.';
 $strShowStatusDelayed_errorsDescr = 'Het aantal met INSERT DELAYED opgeslagen rijen waarbij er een fout optrad (mogelijk een reeds bestaande sleutel).';
 $strShowStatusDelayed_insert_threadsDescr = 'Het aantal INSERT DELAYED afhandelings-threads in gebruik. Elke afzonderlijke tabel waarop INSERT DELAYED wordt toegepast krijgt een eigen thread.';
 $strShowStatusDelayed_writesDescr = 'Het aantal met INSERT DELAYED opgeslagen rijen.';
@@ -1450,4 +1447,24 @@ $strYes = 'Ja';
 $strZeroRemovesTheLimit = 'Opmerking: Het instellen van deze waarden op 0 (nul) verwijdert de limiet.';
 $strZip = '"Gezipt"';
 
+$strSetupServers_host_desc = 'Machinenaam waar de MySQL server bereikbaar is';
+$strSetupServers_verbose_desc = 'Een gebruiksvriendelijke naam voor deze server. Laat dit veld leeg om de machinenaam te tonen.';
+$strShowBinaryContents = 'Toon binaire inhoud';
+$strShowBLOBContents = 'Toon BLOB inhoud';
+$strStatic = 'statisch';
+
+$strLoginWithoutPassword = 'Inloggen zonder wachtwoord is niet toegestaan vanuit de instellingen (zie AllowNoPassword)';
+$strSetupServerNoPasswordMsg = 'U staat het toe dat een gebruiker die geen wachtwoord heeft ingesteld kan inloggen';
+$strSetupServers_AllowNoPassword_name = 'Inloggen zonder wachtwoord toestaan';
+$strHostTableExplanation = 'Indien er gebruik wordt gemaakt van de Host tabel is dit veld niet van toepassing.';
+$strGetMoreThemes = 'Bekijk meer thema\'s!';
+$strNoneDefault = 'Geen';
+$strConfigDirectoryWarning = 'Directory [code]config[/code], which is used by the setup script, still exists in your phpMyAdmin directory. You should remove it once phpMyAdmin has been configured.';  //to translate
+$strEscapeCRLF = 'Remove CRLF characters within fields';  //to translate
+$strDoNotAutoIncrementZeroValues = 'Do not use AUTO_INCREMENT for zero values';  //to translate
+$strAndSmall = 'and';  //to translate
+$strReplicationStatus = 'Replication status';  //to translate
+$strReplicationStatusInfo = 'This MySQL server works as %s in <b>replication</b> process. For further information about replication status on the server, please visit the <a href="#replication">replication section</a>.';  //to translate
+$strReplicationStatus_master = 'Master status';  //to translate
+$strReplicationStatus_slave = 'Slave status';  //to translate
 ?>
