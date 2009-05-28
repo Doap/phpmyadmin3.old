@@ -10,7 +10,7 @@
  * @author     Michal Čihař <michal@cihar.com>
  * @copyright  2006 Michal Čihař <michal@cihar.com>
  * @license    http://www.gnu.org/licenses/gpl.html GNU GPL 2.0
- * @version    $Id: setup.php 11423 2008-07-24 17:26:05Z lem9 $
+ * @version    $Id: setup.php 12304 2009-03-24 12:56:58Z nijel $
  */
 
 // Grab phpMyAdmin version and PMA_dl function
@@ -26,7 +26,7 @@ $PMA_Config_Setup = new PMA_Config();
 
 // Script information
 $script_info = 'phpMyAdmin ' . $PMA_Config_Setup->get('PMA_VERSION') . ' setup script by Michal Čihař <michal@cihar.com>';
-$script_version = '$Id: setup.php 11423 2008-07-24 17:26:05Z lem9 $';
+$script_version = '$Id: setup.php 12304 2009-03-24 12:56:58Z nijel $';
 
 // Grab action
 if (isset($_POST['action'])) {
@@ -313,7 +313,7 @@ function get_cfg_doc($anchor) {
         '<a href="../Documentation.html#cfg_' . $anchor . '" target="pma_doc" class="doc">' .
         '<img class="icon" src="../' . $GLOBALS['cfg']['ThemePath'] . '/original/img/b_help.png" width="11" height="11" alt="Documentation" title="Documentation" />' .
         '</a>' .
-        '<a href="http://wiki.cihar.com/pma/Config#' . $wiki . '" target="pma_doc" class="doc">' .
+        '<a href="http://wiki.phpmyadmin.net/pma/Config#' . $wiki . '" target="pma_doc" class="doc">' .
         '<img class="icon" src="../' . $GLOBALS['cfg']['ThemePath'] . '/original/img/b_info.png" width="11" height="11" alt="Wiki" title="Wiki" />' .
         '</a>' .
         '</span>'
@@ -573,6 +573,7 @@ function get_cfg_string($cfg) {
         foreach ($c['Servers'] as $cnt => $srv) {
             $ret .= $crlf . '/* Server ' . strtr(get_server_name($srv, $cnt, false), '*', '-') . " */$crlf\$i++;" . $crlf;
             foreach ($srv as $key => $val) {
+                $key = preg_replace('/[^A-Za-z0-9_]/', '_', $key);
                 $ret .= get_cfg_val("\$cfg['Servers'][\$i]['$key']", $val);
             }
         }
@@ -581,6 +582,7 @@ function get_cfg_string($cfg) {
     unset($c['Servers']);
 
     foreach ($c as $key => $val) {
+        $key = preg_replace('/[^A-Za-z0-9_]/', '_', $key);
         $ret .= get_cfg_val("\$cfg['$key']", $val);
     }
 
